@@ -1,0 +1,482 @@
+/* İletişim Bölümü */
+.contact-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Başlık Bölümü */
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.contact-header.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  position: relative;
+}
+
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-navy), var(--secondary-gray));
+  margin: 0 auto 20px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 8px;
+  background: var(--accent-beige);
+  border-radius: 4px;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary-gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* İletişim Kartları */
+.contact-cards-container {
+  margin-bottom: 60px;
+}
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(50px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.contact-card.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 31, 63, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.contact-card:hover::before {
+  left: 100%;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 31, 63, 0.15);
+}
+
+/* İkon ve Başlık Container */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* İkon Stilleri */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact-card.address .card-icon {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.contact-card.phone .card-icon {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+}
+
+.contact-card.email .card-icon {
+  background: linear-gradient(135deg, #FF5722, #E64A19);
+  color: white;
+}
+
+.contact-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Kart İçeriği */
+.card-content {
+  flex: 1;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin: 0;
+}
+
+.card-info {
+  font-size: 1rem;
+  color: var(--secondary-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Aksiyon Butonu */
+.card-action {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.action-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--primary-navy);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 31, 63, 0.3);
+  flex: 1;
+  text-align: center;
+}
+
+.action-btn:hover {
+  background: var(--secondary-gray);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 31, 63, 0.4);
+}
+
+/* Kopyala Butonu */
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--accent-beige);
+  color: var(--primary-navy);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 31, 63, 0.2);
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  background: var(--primary-navy);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 31, 63, 0.3);
+}
+
+.copy-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.copy-btn svg {
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Çalışma Saatleri */
+.working-hours {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.4s;
+}
+
+.working-hours.fade-in-delayed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hours-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.hours-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 31, 63, 0.15);
+}
+
+.hours-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-navy), var(--secondary-gray));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.hours-card:hover .hours-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.hours-content {
+  flex: 1;
+}
+
+.hours-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 15px;
+}
+
+.hours-info p {
+  font-size: 1rem;
+  color: var(--secondary-gray);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.hours-info .emergency {
+  color: var(--primary-navy);
+  font-weight: 600;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.slide-in {
+  animation: slideInUp 0.6s ease forwards;
+}
+
+.fade-in-delayed {
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1200px) {
+  .contact-container {
+    padding: 0 20px;
+  }
+  
+  .contact-title {
+    font-size: 3rem;
+  }
+  
+  .contact-cards-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+  
+  .contact-container {
+    padding: 0 15px;
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .contact-header {
+    margin-bottom: 40px;
+  }
+  
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .contact-card {
+    padding: 20px;
+  }
+  
+  .card-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .card-header {
+    gap: 12px;
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+  }
+  
+  .hours-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .hours-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .hours-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+  
+  .contact-card {
+    padding: 18px;
+  }
+  
+  .card-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .card-header {
+    gap: 10px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .card-info {
+    font-size: 0.9rem;
+  }
+  
+  .action-btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+  
+  .copy-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .hours-card {
+    padding: 25px;
+  }
+  
+  .hours-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .hours-title {
+    font-size: 1.3rem;
+  }
+  
+  .hours-info p {
+    font-size: 0.9rem;
+  }
+}

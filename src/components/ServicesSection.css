@@ -1,0 +1,375 @@
+/* Hizmetlerim Bölümü */
+.services-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Başlık Bölümü */
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.services-header.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  position: relative;
+}
+
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-navy), var(--secondary-gray));
+  margin: 0 auto;
+  border-radius: 2px;
+  position: relative;
+}
+
+.title-underline::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 8px;
+  background: var(--accent-beige);
+  border-radius: 4px;
+}
+
+/* Hizmet Kartları */
+.services-scroll-container {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.services-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 30px;
+  padding: 20px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+
+.services-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.service-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(50px);
+  position: relative;
+  cursor: pointer;
+  flex: 0 0 300px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+.service-card.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 31, 63, 0.2);
+}
+
+.card-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--primary-navy);
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .card-title {
+  color: var(--secondary-gray);
+}
+
+/* Ok Kontrolleri */
+.scroll-controls {
+  position: absolute;
+  top: 50%;
+  right: -80px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10;
+}
+
+.scroll-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-navy);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 31, 63, 0.3);
+  font-size: 0;
+}
+
+.scroll-btn:hover {
+  background: var(--secondary-gray);
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 31, 63, 0.4);
+}
+
+.scroll-btn:active {
+  transform: scale(0.95);
+}
+
+.scroll-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Detaylı Görüntüle Butonu */
+.services-button-container {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.3s;
+}
+
+.services-button-container.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.view-details-btn {
+  background: linear-gradient(135deg, var(--primary-navy), var(--secondary-gray));
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 25px rgba(0, 31, 63, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.view-details-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.view-details-btn:hover::before {
+  left: 100%;
+}
+
+.view-details-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 31, 63, 0.4);
+  background: linear-gradient(135deg, var(--secondary-gray), var(--primary-navy));
+}
+
+.view-details-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.view-details-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+/* Animasyonlar */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.slide-in {
+  animation: slideInUp 0.6s ease forwards;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1200px) {
+  .services-container {
+    padding: 0 20px;
+  }
+  
+  .services-title {
+    font-size: 3rem;
+  }
+  
+  .service-card {
+    flex: 0 0 280px;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 60px 0;
+  }
+  
+  .services-container {
+    padding: 0 15px;
+  }
+  
+  .services-title {
+    font-size: 2.5rem;
+  }
+  
+  .services-header {
+    margin-bottom: 40px;
+  }
+  
+  .service-card {
+    flex: 0 0 250px;
+    min-width: 250px;
+  }
+  
+  .card-image-container {
+    height: 180px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .view-details-btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+  
+  .scroll-controls {
+    bottom: -50px;
+  }
+  
+  .scroll-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-title {
+    font-size: 2rem;
+  }
+  
+  .service-card {
+    flex: 0 0 220px;
+    min-width: 220px;
+  }
+  
+  .card-image-container {
+    height: 160px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .view-details-btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .scroll-controls {
+    bottom: -45px;
+  }
+  
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

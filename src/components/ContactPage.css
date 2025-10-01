@@ -1,0 +1,17 @@
+/* İletişim Sayfası */
+.contact-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+/* Sayfa başlığı için ek stil */
+.contact-page .contact-section {
+  padding-top: 60px; /* Header yüksekliği için ek boşluk */
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .contact-page .contact-section {
+    padding-top: 40px;
+  }
+}
