@@ -3,7 +3,7 @@ import './AboutPage.css';
 
 const AboutPage: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  // const [isVisible, setIsVisible] = useState(false); // Kullanılmıyor
   const [visibleSections, setVisibleSections] = useState<number[]>([]);
 
   const values = [
