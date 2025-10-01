@@ -53,7 +53,6 @@ const AboutPage: React.FC = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
           // Bölümleri sırayla göster
           [0, 1, 2, 3].forEach((index) => {
             setTimeout(() => {
